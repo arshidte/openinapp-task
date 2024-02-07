@@ -84,10 +84,8 @@ input {
 /* Sidebar */
 .sidebar {
   width: 218px;
-  height: 100%;
+  height: 100vh;
   background-color: #ffffff;
-  /* padding: 50px 30px; */
-  position: fixed;
   top: 0;
   left: 0;
   transition: left 0.3s ease;
@@ -100,7 +98,8 @@ input {
 }
 
 .sidebar-header {
-  margin-bottom: 20px;
+  padding: 25px 20px;
+  background-color: #FFFFFF;
 }
 
 .sidebar-menu {
@@ -119,14 +118,14 @@ input {
 }
 .sidebar-menu li:hover,
 .sidebar-menu li:hover .sidebar-icon path {
-  color: #605bff; /* Change the text color */
-  fill: #605bff; /* Change the icon color */
+  color: #605bff;
+  fill: #605bff;
 }
 .sidebar-toggle {
   background: none;
   border: none;
   cursor: pointer;
-  display: none; /* Hide hamburger icon by default */
+  display: none;
 }
 
 .hamburger {
@@ -148,11 +147,39 @@ input {
   margin: 6px auto;
   transition: background-color 0.3s;
 }
+.main-content {
+  flex: 1; 
+  padding: 20px;
+}
+.logo-in-header {
+  width: 114px;
+}
+.logo-in-sidebar {
+  width: 82px;
+}
+/* sidebar end */
+
+.dropzone-main {
+  width: 564px;
+}
+.dropzone {
+  height: 258px;
+  border: 1px dashed #858585;
+  border-radius: 8px;
+}
+
+
 
 /* Media query for mobile devices */
 @media (max-width: 768px) {
+  .dropzone-main {
+    width: 100%;
+  }
   .sidebar {
-    left: -250px; /* Initially hidden on mobile */
+    left: -250px;
+    position: fixed;
+    height: 100%;
+    border-radius: 0 20px 20px;
   }
 
   .sidebar.open {
