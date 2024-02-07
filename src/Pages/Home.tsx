@@ -1,8 +1,9 @@
-import React from "react";
+import { useState } from "react";
 import Sidebar from "../Components/Sidebar";
 import DragAndDrop from "../Components/DragAndDrop";
 
 const Home = () => {
+  const [excelData, setExcelData] = useState<any[]>();
   return (
     <div>
       <div className="md:flex">
@@ -27,15 +28,43 @@ const Home = () => {
               <img src="images/person.png" alt="person" />
             </div>
           </div>
-          <div className="h-[80vh] overflow-hidden md:flex justify-center items-center">
+          <div className="h-[80vh] md:flex justify-center items-center">
             <div className="bg-white p-5 rounded-md">
-              <DragAndDrop />
+              <DragAndDrop setExcelData={setExcelData} />
             </div>
           </div>
 
-          <div className="uploaded-table">
-            
-          </div>
+          {excelData && (
+            <>
+              <div className="font-semibold text-xl">Uploads</div>
+              <div className="table-bg">
+                <table>
+                  <thead>
+                    <tr>
+                      {/* <th>SI No</th>
+                  <th>Links</th>
+                  <th>Prefix</th>
+                  <th>Add Tags</th>
+                  <th>Selected Tags</th> */}
+                      {excelData &&
+                        Object.keys(excelData[0]).map((key) => (
+                          <th key={key}>{key}</th>
+                        ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {excelData.map((eachData, idx) => (
+                      <tr key={idx}>
+                        {Object.keys(eachData).map((key) => (
+                          <td key={key}>{eachData[key]}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </div>
