@@ -50,7 +50,8 @@ input {
 .bottom-icons {
   position: absolute;
   bottom: 67px;
-  left: 140px;
+  left: 42%;
+  transform: translate(-50%, -42%);
 }
 .sign-in-form h3 {
   font-size: 36px;
@@ -72,12 +73,16 @@ input {
   padding: 33px 34px;
   border-radius: 20px;
 }
-.form-div button {
+.signin-btn {
   padding: 9px 0px;
   font-size: 16px;
   font-weight: 700;
   color: #ffffff;
   border-radius: 10px;
+  display: block;
+}
+.signin-header {
+  padding: 27px 20px;
 }
 /* Sign in page end*/
 
@@ -191,15 +196,25 @@ td {
 
 /* Responsive styles */
 @media only screen and (max-width: 600px) {
-  /* Ensure table container scrolls horizontally */
   .table-container {
     overflow-x: auto;
   }
-  /* Ensure table headers remain visible */
   th {
     position: sticky;
     top: 0;
     background-color: #f2f2f2;
+  }
+  .sign-in-form h3 {
+    font-size: 24px;
+  }
+  .ga-btns button {
+    font-size: 8px;
+  }
+  .ga-btns button img {
+    width: 10px;
+  }
+  .form-div {
+    padding: 23px 24px;
   }
 }
 /* Table styles */

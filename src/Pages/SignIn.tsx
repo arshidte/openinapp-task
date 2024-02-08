@@ -1,10 +1,10 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
   return (
     <div className="sign-in-page h-screen">
-      <div className="grid grid-cols-2 h-full gap-2">
-        <div className="left-side bg-primary h-screen">
+      <div className="grid grid-cols-1 md:grid-cols-2 h-full gap-2">
+        <div className="hidden md:block left-side bg-primary h-screen">
           <img src="images/Logo.svg" alt="" />
           <h1 className="main-head text-white text-center">BASE</h1>
           <div className="bottom-icons">
@@ -16,7 +16,12 @@ const SignIn = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center">
+
+        <div className="md:hidden signin-header bg-primary">
+          <img src="images/Logo-white.png" alt="logo-company" />
+        </div>
+
+        <div className="flex flex-col justify-center items-center p-2">
           <div className="sign-in-form flex flex-col gap-7">
             <div>
               <h3>Sign In</h3>
@@ -46,11 +51,19 @@ const SignIn = () => {
                 <a href="#" className="text-link-primary">
                   <p>Forgot password?</p>
                 </a>
-                <button className="bg-primary">Sign In</button>
+                <Link
+                  to="/dashboard"
+                  className="signin-btn bg-primary text-center"
+                >
+                  <button>Sign In</button>
+                </Link>
               </form>
             </div>
             <p className="text-center text-secondary">
-              Don't have an account? <a href="#" className="text-link-primary">Register here</a>
+              Don't have an account?{" "}
+              <a href="#" className="text-link-primary">
+                Register here
+              </a>
             </p>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
